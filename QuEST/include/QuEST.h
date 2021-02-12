@@ -359,7 +359,7 @@ void destroyComplexMatrixN(ComplexMatrixN matr);
  * @throws invalidQuESTInputError if \p m has not been allocated (e.g. with createComplexMatrixN())
  * @author Tyson Jones
  */
-void initComplexMatrixN(ComplexMatrixN m, qreal real[][1<<m.numQubits], qreal imag[][1<<m.numQubits]);
+void initComplexMatrixN(ComplexMatrixN m, qreal *real[], qreal *imag[]);
 #endif 
 
 /** Create a \p PauliHamil instance, which is a Hamiltonian expressed as a real-weighted 
@@ -3856,9 +3856,15 @@ void invalidQuESTInputError(const char* errMsg, const char* errFunc);
  *  with pointers to the rows of \p re and \p im
  * @author Tyson Jones
  */
-ComplexMatrixN bindArraysToStackComplexMatrixN(
-    int numQubits, qreal re[][1<<numQubits], qreal im[][1<<numQubits], 
-    qreal** reStorage, qreal** imStorage);
+
+//---------------------------------------------------------------------------
+// commented out by dojt (Ketita):
+// Breaks Clang.jl automatic generation of Julia interface
+//
+// ComplexMatrixN bindArraysToStackComplexMatrixN(
+//     int numQubits, qreal re[][1<<numQubits], qreal im[][1<<numQubits], 
+//     qreal** reStorage, qreal** imStorage);
+//---------------------------------------------------------------------------
 #endif
 /// \endcond
 
