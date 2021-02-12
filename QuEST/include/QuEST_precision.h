@@ -26,7 +26,7 @@
  * Single precision, which uses 4 bytes per amplitude component
  */
 # if QuEST_PREC==1
-    # define qreal float
+    typedef float qreal;
     // \cond HIDDEN_SYMBOLS   
     # define MPI_QuEST_REAL MPI_FLOAT
     # define MPI_MAX_AMPS_IN_MSG (1LL<<29) // must be 2^int
@@ -40,7 +40,7 @@
  * Double precision, which uses 8 bytes per amplitude component
  */
 # elif QuEST_PREC==2
-    # define qreal double
+    typedef double qreal;
     // \cond HIDDEN_SYMBOLS   
     # define MPI_QuEST_REAL MPI_DOUBLE
     # define MPI_MAX_AMPS_IN_MSG (1LL<<28) // must be 2^int
