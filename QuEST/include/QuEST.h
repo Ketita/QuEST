@@ -359,7 +359,7 @@ void destroyComplexMatrixN(ComplexMatrixN matr);
  * @throws invalidQuESTInputError if \p m has not been allocated (e.g. with createComplexMatrixN())
  * @author Tyson Jones
  */
-void initComplexMatrixN(ComplexMatrixN m, qreal *real[], qreal *imag[]);
+void initComplexMatrixN(ComplexMatrixN m, qreal (*real)[], qreal (*imag)[]);
 #endif 
 
 /** Create a \p PauliHamil instance, which is a Hamiltonian expressed as a real-weighted 
